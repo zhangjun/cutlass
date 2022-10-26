@@ -1,0 +1,39 @@
+cutlass_target_sources(
+  cutlass_library_objs
+  BATCH_SOURCES ON
+  PRIVATE
+    build/generated/initialize_all.cpp
+    build/generated/gemm/all_gemm_operations.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_f16_256x128_32x3_nn_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_f16_256x128_32x3_tn_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_f16_256x128_32x3_tt_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_f16_256x128_32x3_nn_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_f16_256x128_32x3_nt_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_f16_256x128_32x3_tn_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_f16_256x128_32x3_tt_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_f16_s16816gemm_f16_256x128_32x3_nn_align8.cu
+    build/generated/gemm/cutlass_tensorop_f16_s16816gemm_f16_256x128_32x3_nt_align8.cu
+    build/generated/gemm/cutlass_tensorop_f16_s16816gemm_f16_256x128_32x3_tn_align8.cu
+    build/generated/gemm/cutlass_tensorop_f16_s16816gemm_f16_256x128_32x3_tt_align8.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_256x128_32x3_nn_align8.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_256x128_32x3_nt_align8.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_256x128_32x3_tn_align8.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_256x128_32x3_tt_align8.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_grouped_256x128_32x3_nn_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_grouped_256x128_32x3_nt_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_grouped_256x128_32x3_tn_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_h16816gemm_grouped_256x128_32x3_tt_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_bf16_256x128_32x3_nn_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_bf16_256x128_32x3_nt_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_bf16_256x128_32x3_tn_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_bf16_256x128_32x3_tt_align8.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_bf16_256x128_32x3_nn_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_bf16_256x128_32x3_nt_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_bf16_256x128_32x3_tn_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_s16816gemm_grouped_bf16_256x128_32x3_tt_align8_scheduleDevice.cu
+    build/generated/gemm/cutlass_tensorop_bf16_s16816gemm_bf16_256x128_32x3_nn_align8.cu
+    build/generated/gemm/cutlass_tensorop_bf16_s16816gemm_bf16_256x128_32x3_nt_align8.cu
+    build/generated/gemm/cutlass_tensorop_bf16_s16816gemm_bf16_256x128_32x3_tn_align8.cu
+    build/generated/gemm/cutlass_tensorop_bf16_s16816gemm_bf16_256x128_32x3_tt_align8.cu
+)
