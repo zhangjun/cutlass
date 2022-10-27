@@ -103,9 +103,9 @@ class Conv2dOperation:
     )
 
     if self.stride_support == StrideSupport.Unity:
-      configuration_name = "cutlass_${opcode_class}_${extended_name}_${threadblock}_${layout}_unity_stride_align${alignment}"
+      configuration_name = "cutlass_conv2d_${opcode_class}_${extended_name}_${threadblock}_${layout}_unity_stride_align${alignment}"
     else:
-      configuration_name = "cutlass_${opcode_class}_${extended_name}_${threadblock}_${layout}_align${alignment}"
+      configuration_name = "cutlass_conv2d_${opcode_class}_${extended_name}_${threadblock}_${layout}_align${alignment}"
 
     return SubstituteTemplate(
       configuration_name,

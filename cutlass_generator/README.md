@@ -1,6 +1,6 @@
 # genecode
 ```
-python main.py --operations=conv,gemm --curr-build-dir=build --architectures=80 --cuda-version=11.0.0
+python3 main.py --operations=conv2d,gemm --curr-build-dir=build --architectures=80 --cuda-version=11.0.0 --kernels=gemm,conv2d
 ```
 
 # usage
