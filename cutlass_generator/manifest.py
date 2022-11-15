@@ -75,6 +75,7 @@ void initialize_all_${operation_name}_operations(Manifest &manifest) {
   #
   def __enter__(self):
     self.operation_path = os.path.join(self.generated_path, OperationKindNames[self.kind])
+    # shutil.rmtree(self.operation_path)
     os.mkdir(self.operation_path)
 
     self.top_level_path = os.path.join(self.operation_path, "all_%s_operations.cu" % OperationKindNames[self.kind])

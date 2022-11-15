@@ -298,7 +298,8 @@ def CreateConv2dOperator(manifest, layout, tile_descriptions, data_type, alignme
   
           manifest.append(new_operation)
           operations.append(new_operation)
-  
+      # Fprop default
+      continue
       #
       # Conv2d Dgrad
       #
@@ -1040,16 +1041,16 @@ def GenerateSM80_TensorOp_16816(manifest, cuda_version):
       DataType.f16, DataType.f16, DataType.f32,       \
       OpcodeClass.TensorOp,                           \
       MathOperation.multiply_add),
-    MathInstruction(                                  \
-      [16, 8, 16],                                    \
-      DataType.f16, DataType.f16, DataType.f16,       \
-      OpcodeClass.TensorOp,                           \
-      MathOperation.multiply_add),
-    MathInstruction(                                  \
-      [16, 8, 16],                                    \
-      DataType.bf16, DataType.bf16, DataType.f32,     \
-      OpcodeClass.TensorOp,                           \
-      MathOperation.multiply_add),
+    # MathInstruction(                                  \
+    #   [16, 8, 16],                                    \
+    #   DataType.f16, DataType.f16, DataType.f16,       \
+    #   OpcodeClass.TensorOp,                           \
+    #   MathOperation.multiply_add),
+    # MathInstruction(                                  \
+    #   [16, 8, 16],                                    \
+    #   DataType.bf16, DataType.bf16, DataType.f32,     \
+    #   OpcodeClass.TensorOp,                           \
+    #   MathOperation.multiply_add),
   ]
 
   min_cc = 80

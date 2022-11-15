@@ -106,6 +106,7 @@ class Conv2dOperation:
       configuration_name = "cutlass_conv2d_${opcode_class}_${extended_name}_${threadblock}_${layout}_unity_stride_align${alignment}"
     else:
       configuration_name = "cutlass_conv2d_${opcode_class}_${extended_name}_${threadblock}_${layout}_align${alignment}"
+    # configuration_name = "cutlass_conv2d_${opcode_class}_${extended_name}"
 
     return SubstituteTemplate(
       configuration_name,
@@ -271,6 +272,15 @@ struct ${operation_name} :
 #include "library_internal.h"
 #include "conv2d_operation.h"
 
+// common header
+#include "cutlass/cutlass.h"
+#include "cutlass/conv/kernel/default_conv2d_fprop.h"
+#include "cutlass/conv/device/implicit_gemm_convolution.h"
+#include "cutlass/util/host_tensor.h"
+#include "cutlass/util/reference/host/tensor_fill.h"
+#include <cutlass/epilogue/thread/linear_combination_bias_relu.h>
+#include <cutlass/epilogue/thread/linear_combination_hardswish.h>
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 """
 
@@ -310,7 +320,9 @@ void initialize_${configuration_name}(Manifest &manifest) {
 
   #
   def __enter__(self):
-    self.configuration_file = open(self.configuration_path, "w")
+    print(self.configuration_path)
+    # self.configuration_file = open(self.configuration_path, "a+")
+    self.configuration_file = open("cutlass_conv.cu", "a+")
     self.configuration_file.write(SubstituteTemplate(self.header_template, {
       'configuration_name': self.configuration_name
       }))
@@ -328,7 +340,7 @@ void initialize_${configuration_name}(Manifest &manifest) {
 
   #
   def __exit__(self, exception_type, exception_value, traceback):
-
+    return
     self.configuration_file.write(SubstituteTemplate(self.configuration_header, {
       'configuration_name': self.configuration_name
       }))
